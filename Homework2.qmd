@@ -16,8 +16,9 @@ post_bp <- c(127, 145, 135, 122, 115, 122, 123, 126, 126, 129, 132, 146, 120, 11
 by a character vector.
 
 ```{r}
+
 names(pre_bp) <- names(post_bp) <- paste("Patient", 1:20, sep = "_")
-names
+names(pre_bp)
 ```
 
 3. Calculate the change in blood pressure for each patient by subtracting post-treatment measurements
@@ -60,11 +61,10 @@ mean(bp_decrease)
 # Task 2: Basic Data Frame practice
 
 1. Create a data frame object with four columns corresponding to your data above: patient, pre_bp,
-post_bp, and diff_bp
+post_bp, and diff_bp.
 
 ```{r}
-
-treatment <- data.frame( names, pre_bp, post_bp, diff_bp)
+treatment <- data.frame(names(pre_bp), pre_bp, post_bp, diff_bp)
 treatment
 ```
 
@@ -80,7 +80,7 @@ neg_df
 if it is not.
 
 ```{r}
-treatment$newcol <- treatment$post_bp>120
+treatment$newcol <- treatment$post_bp > 120
 treatment$newcol
 ```
 4. Finally, print the data frame out nicely in your final document by modifying the code below appropriately.
