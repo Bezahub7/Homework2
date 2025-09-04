@@ -16,10 +16,8 @@ post_bp <- c(127, 145, 135, 122, 115, 122, 123, 126, 126, 129, 132, 146, 120, 11
 by a character vector.
 
 ```{r}
- names= paste("Patient", 1:20, sep = "_")
-names(pre_bp) <- names(pre_bp) <- paste("Patient", 1:20, sep = "_")
-
- names
+names(pre_bp) <- names(post_bp) <- paste("Patient", 1:20, sep = "_")
+names
 ```
 
 3. Calculate the change in blood pressure for each patient by subtracting post-treatment measurements
@@ -85,6 +83,7 @@ if it is not.
 treatment$newcol <- treatment$post_bp>120
 treatment$newcol
 ```
+4. Finally, print the data frame out nicely in your final document by modifying the code below appropriately.
 
 ```{r}
 knitr::kable(treatment)
@@ -92,42 +91,57 @@ knitr::kable(treatment)
 
 
 # Task 3: List practice
-Create a new data frame with this data in it that is similar to the data frame from task 2 (including
+1. Create a new data frame with this data in it that is similar to the data frame from task 2 (including
 the new column of TRUE/FALSE values).
 
 ```{r}
 placebo <- data.frame(
   names= paste("Patient", 1:10, sep = "_"),
   pre_bp = c(138, 135, 147, 117, 152, 134, 114, 121, 131, 130),
-  post_bp = c(105, 136, 123, 130, 134, 143, 135, 139, 120, 124),
-  diff_bp= c(138, 135, 147, 117, 152, 134, 114, 121, 131, 130)- c(105, 136, 123, 130, 134, 143, 135, 139, 120, 124)
-  , newcol=c(105, 136, 123, 130, 134, 143, 135, 139, 120, 124)>120)
+  post_bp = c(105, 136, 123, 130, 134, 143, 135, 139, 120, 124))
+  
 placebo
 ```
+1.1 Add vectors
+     - difference between pre and post placebo use
+     - new column to check if post_bp is >120 
+     
+```{r}
+placebo$diff_bp <- placebo$pre_bp-placebo$post_bp
+placebo$newcol <- placebo$post_bp>120
+
+placebo$diff_bp
+placebo$newcol
+```
+
 2. Now create and store a list with two elements:
 - 1st element named treatment and contains the first data frame you created.
 - 2nd element named placebo and contains the second data frame you created.
 
 ```{r}
-my_list <- list(treatment, placebo)
+my_list <- list('treatment'=treatment, 'placebo'=placebo)
 my_list
 ```
 
 3. Access the first list element using three different types of syntax (the result can be a list or just the
 data frame).
+- First syntax
 
 ```{r}
 my_list[1]
 ```
+
+- second syntax
+
 ```{r}
 my_list[[1]]
 
 ```
-
+- Third syntax
 
 
 ```{r}
-str(my_list[[1]])
+my_list$treatment
 ```
 4. Use your list from question 2. In one line of code, access the pre_bp column of the placebo data
 frame.
