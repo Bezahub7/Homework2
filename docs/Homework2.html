@@ -268,11 +268,11 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <li>Add a new column to the data frame corresponding to TRUE if the post_bp is less than 120 and FALSE if it is not.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>treatment<span class="sc">$</span>newcol <span class="ot">&lt;-</span> treatment<span class="sc">$</span>post_bp <span class="sc">&gt;</span> <span class="dv">120</span></span>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>treatment<span class="sc">$</span>newcol <span class="ot">&lt;-</span> treatment<span class="sc">$</span>post_bp <span class="sc">&lt;</span> <span class="dv">120</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>treatment<span class="sc">$</span>newcol</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-[13] FALSE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE</code></pre>
+<pre><code> [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[13] FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE</code></pre>
 </div>
 </div>
 <ol start="4" type="1">
@@ -299,7 +299,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">120</td>
 <td style="text-align: right;">127</td>
 <td style="text-align: right;">-7</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Patient_2</td>
@@ -307,7 +307,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">151</td>
 <td style="text-align: right;">145</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Patient_3</td>
@@ -315,7 +315,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">125</td>
 <td style="text-align: right;">135</td>
 <td style="text-align: right;">-10</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Patient_4</td>
@@ -323,7 +323,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">126</td>
 <td style="text-align: right;">122</td>
 <td style="text-align: right;">4</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Patient_5</td>
@@ -331,7 +331,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">115</td>
 <td style="text-align: right;">115</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Patient_6</td>
@@ -339,7 +339,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">132</td>
 <td style="text-align: right;">122</td>
 <td style="text-align: right;">10</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Patient_7</td>
@@ -347,7 +347,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">132</td>
 <td style="text-align: right;">123</td>
 <td style="text-align: right;">9</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Patient_8</td>
@@ -355,7 +355,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">129</td>
 <td style="text-align: right;">126</td>
 <td style="text-align: right;">3</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Patient_9</td>
@@ -363,7 +363,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">134</td>
 <td style="text-align: right;">126</td>
 <td style="text-align: right;">8</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Patient_10</td>
@@ -371,7 +371,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">139</td>
 <td style="text-align: right;">129</td>
 <td style="text-align: right;">10</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Patient_11</td>
@@ -379,7 +379,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">127</td>
 <td style="text-align: right;">132</td>
 <td style="text-align: right;">-5</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Patient_12</td>
@@ -387,7 +387,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">122</td>
 <td style="text-align: right;">146</td>
 <td style="text-align: right;">-24</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Patient_13</td>
@@ -403,7 +403,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">135</td>
 <td style="text-align: right;">114</td>
 <td style="text-align: right;">21</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Patient_15</td>
@@ -411,7 +411,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">133</td>
 <td style="text-align: right;">121</td>
 <td style="text-align: right;">12</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Patient_16</td>
@@ -427,7 +427,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">147</td>
 <td style="text-align: right;">128</td>
 <td style="text-align: right;">19</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Patient_18</td>
@@ -443,7 +443,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">140</td>
 <td style="text-align: right;">133</td>
 <td style="text-align: right;">7</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Patient_20</td>
@@ -451,7 +451,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <td style="text-align: right;">132</td>
 <td style="text-align: right;">115</td>
 <td style="text-align: right;">17</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
 </tr>
 </tbody>
 </table>
@@ -484,10 +484,10 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 10 Patient_10    130     124</code></pre>
 </div>
 </div>
-<p>1.1 Add vectors - difference between pre and post placebo use - new column to check if post_bp is &gt;120</p>
+<p>1.1 Add vectors - difference between pre and post placebo use - new column to check if post_bp is &lt; 120</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>placebo<span class="sc">$</span>diff_bp <span class="ot">&lt;-</span> placebo<span class="sc">$</span>pre_bp<span class="sc">-</span>placebo<span class="sc">$</span>post_bp</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>placebo<span class="sc">$</span>newcol <span class="ot">&lt;-</span> placebo<span class="sc">$</span>post_bp<span class="sc">&gt;</span><span class="dv">120</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>placebo<span class="sc">$</span>newcol <span class="ot">&lt;-</span> placebo<span class="sc">$</span>post_bp <span class="sc">&lt;</span> <span class="dv">120</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>placebo<span class="sc">$</span>diff_bp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -495,7 +495,7 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>placebo<span class="sc">$</span>newcol</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE</code></pre>
+<pre><code> [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 </div>
 </div>
 <ol start="2" type="1">
@@ -511,39 +511,39 @@ Patient_12    Patient_12    122     146     -24</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>$treatment
            names.pre_bp. pre_bp post_bp diff_bp newcol
-Patient_1      Patient_1    120     127      -7   TRUE
-Patient_2      Patient_2    151     145       6   TRUE
-Patient_3      Patient_3    125     135     -10   TRUE
-Patient_4      Patient_4    126     122       4   TRUE
-Patient_5      Patient_5    115     115       0  FALSE
-Patient_6      Patient_6    132     122      10   TRUE
-Patient_7      Patient_7    132     123       9   TRUE
-Patient_8      Patient_8    129     126       3   TRUE
-Patient_9      Patient_9    134     126       8   TRUE
-Patient_10    Patient_10    139     129      10   TRUE
-Patient_11    Patient_11    127     132      -5   TRUE
-Patient_12    Patient_12    122     146     -24   TRUE
+Patient_1      Patient_1    120     127      -7  FALSE
+Patient_2      Patient_2    151     145       6  FALSE
+Patient_3      Patient_3    125     135     -10  FALSE
+Patient_4      Patient_4    126     122       4  FALSE
+Patient_5      Patient_5    115     115       0   TRUE
+Patient_6      Patient_6    132     122      10  FALSE
+Patient_7      Patient_7    132     123       9  FALSE
+Patient_8      Patient_8    129     126       3  FALSE
+Patient_9      Patient_9    134     126       8  FALSE
+Patient_10    Patient_10    139     129      10  FALSE
+Patient_11    Patient_11    127     132      -5  FALSE
+Patient_12    Patient_12    122     146     -24  FALSE
 Patient_13    Patient_13    127     120       7  FALSE
-Patient_14    Patient_14    135     114      21  FALSE
-Patient_15    Patient_15    133     121      12   TRUE
+Patient_14    Patient_14    135     114      21   TRUE
+Patient_15    Patient_15    133     121      12  FALSE
 Patient_16    Patient_16    128     120       8  FALSE
-Patient_17    Patient_17    147     128      19   TRUE
+Patient_17    Patient_17    147     128      19  FALSE
 Patient_18    Patient_18    138     120      18  FALSE
-Patient_19    Patient_19    140     133       7   TRUE
-Patient_20    Patient_20    132     115      17  FALSE
+Patient_19    Patient_19    140     133       7  FALSE
+Patient_20    Patient_20    132     115      17   TRUE
 
 $placebo
         names pre_bp post_bp diff_bp newcol
-1   Patient_1    138     105      33  FALSE
-2   Patient_2    135     136      -1   TRUE
-3   Patient_3    147     123      24   TRUE
-4   Patient_4    117     130     -13   TRUE
-5   Patient_5    152     134      18   TRUE
-6   Patient_6    134     143      -9   TRUE
-7   Patient_7    114     135     -21   TRUE
-8   Patient_8    121     139     -18   TRUE
+1   Patient_1    138     105      33   TRUE
+2   Patient_2    135     136      -1  FALSE
+3   Patient_3    147     123      24  FALSE
+4   Patient_4    117     130     -13  FALSE
+5   Patient_5    152     134      18  FALSE
+6   Patient_6    134     143      -9  FALSE
+7   Patient_7    114     135     -21  FALSE
+8   Patient_8    121     139     -18  FALSE
 9   Patient_9    131     120      11  FALSE
-10 Patient_10    130     124       6   TRUE</code></pre>
+10 Patient_10    130     124       6  FALSE</code></pre>
 </div>
 </div>
 <ol start="3" type="1">
@@ -557,26 +557,26 @@ $placebo
 <div class="cell-output cell-output-stdout">
 <pre><code>$treatment
            names.pre_bp. pre_bp post_bp diff_bp newcol
-Patient_1      Patient_1    120     127      -7   TRUE
-Patient_2      Patient_2    151     145       6   TRUE
-Patient_3      Patient_3    125     135     -10   TRUE
-Patient_4      Patient_4    126     122       4   TRUE
-Patient_5      Patient_5    115     115       0  FALSE
-Patient_6      Patient_6    132     122      10   TRUE
-Patient_7      Patient_7    132     123       9   TRUE
-Patient_8      Patient_8    129     126       3   TRUE
-Patient_9      Patient_9    134     126       8   TRUE
-Patient_10    Patient_10    139     129      10   TRUE
-Patient_11    Patient_11    127     132      -5   TRUE
-Patient_12    Patient_12    122     146     -24   TRUE
+Patient_1      Patient_1    120     127      -7  FALSE
+Patient_2      Patient_2    151     145       6  FALSE
+Patient_3      Patient_3    125     135     -10  FALSE
+Patient_4      Patient_4    126     122       4  FALSE
+Patient_5      Patient_5    115     115       0   TRUE
+Patient_6      Patient_6    132     122      10  FALSE
+Patient_7      Patient_7    132     123       9  FALSE
+Patient_8      Patient_8    129     126       3  FALSE
+Patient_9      Patient_9    134     126       8  FALSE
+Patient_10    Patient_10    139     129      10  FALSE
+Patient_11    Patient_11    127     132      -5  FALSE
+Patient_12    Patient_12    122     146     -24  FALSE
 Patient_13    Patient_13    127     120       7  FALSE
-Patient_14    Patient_14    135     114      21  FALSE
-Patient_15    Patient_15    133     121      12   TRUE
+Patient_14    Patient_14    135     114      21   TRUE
+Patient_15    Patient_15    133     121      12  FALSE
 Patient_16    Patient_16    128     120       8  FALSE
-Patient_17    Patient_17    147     128      19   TRUE
+Patient_17    Patient_17    147     128      19  FALSE
 Patient_18    Patient_18    138     120      18  FALSE
-Patient_19    Patient_19    140     133       7   TRUE
-Patient_20    Patient_20    132     115      17  FALSE</code></pre>
+Patient_19    Patient_19    140     133       7  FALSE
+Patient_20    Patient_20    132     115      17   TRUE</code></pre>
 </div>
 </div>
 <ul>
@@ -586,26 +586,26 @@ Patient_20    Patient_20    132     115      17  FALSE</code></pre>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>my_list[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           names.pre_bp. pre_bp post_bp diff_bp newcol
-Patient_1      Patient_1    120     127      -7   TRUE
-Patient_2      Patient_2    151     145       6   TRUE
-Patient_3      Patient_3    125     135     -10   TRUE
-Patient_4      Patient_4    126     122       4   TRUE
-Patient_5      Patient_5    115     115       0  FALSE
-Patient_6      Patient_6    132     122      10   TRUE
-Patient_7      Patient_7    132     123       9   TRUE
-Patient_8      Patient_8    129     126       3   TRUE
-Patient_9      Patient_9    134     126       8   TRUE
-Patient_10    Patient_10    139     129      10   TRUE
-Patient_11    Patient_11    127     132      -5   TRUE
-Patient_12    Patient_12    122     146     -24   TRUE
+Patient_1      Patient_1    120     127      -7  FALSE
+Patient_2      Patient_2    151     145       6  FALSE
+Patient_3      Patient_3    125     135     -10  FALSE
+Patient_4      Patient_4    126     122       4  FALSE
+Patient_5      Patient_5    115     115       0   TRUE
+Patient_6      Patient_6    132     122      10  FALSE
+Patient_7      Patient_7    132     123       9  FALSE
+Patient_8      Patient_8    129     126       3  FALSE
+Patient_9      Patient_9    134     126       8  FALSE
+Patient_10    Patient_10    139     129      10  FALSE
+Patient_11    Patient_11    127     132      -5  FALSE
+Patient_12    Patient_12    122     146     -24  FALSE
 Patient_13    Patient_13    127     120       7  FALSE
-Patient_14    Patient_14    135     114      21  FALSE
-Patient_15    Patient_15    133     121      12   TRUE
+Patient_14    Patient_14    135     114      21   TRUE
+Patient_15    Patient_15    133     121      12  FALSE
 Patient_16    Patient_16    128     120       8  FALSE
-Patient_17    Patient_17    147     128      19   TRUE
+Patient_17    Patient_17    147     128      19  FALSE
 Patient_18    Patient_18    138     120      18  FALSE
-Patient_19    Patient_19    140     133       7   TRUE
-Patient_20    Patient_20    132     115      17  FALSE</code></pre>
+Patient_19    Patient_19    140     133       7  FALSE
+Patient_20    Patient_20    132     115      17   TRUE</code></pre>
 </div>
 </div>
 <ul>
@@ -615,26 +615,26 @@ Patient_20    Patient_20    132     115      17  FALSE</code></pre>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>my_list<span class="sc">$</span>treatment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           names.pre_bp. pre_bp post_bp diff_bp newcol
-Patient_1      Patient_1    120     127      -7   TRUE
-Patient_2      Patient_2    151     145       6   TRUE
-Patient_3      Patient_3    125     135     -10   TRUE
-Patient_4      Patient_4    126     122       4   TRUE
-Patient_5      Patient_5    115     115       0  FALSE
-Patient_6      Patient_6    132     122      10   TRUE
-Patient_7      Patient_7    132     123       9   TRUE
-Patient_8      Patient_8    129     126       3   TRUE
-Patient_9      Patient_9    134     126       8   TRUE
-Patient_10    Patient_10    139     129      10   TRUE
-Patient_11    Patient_11    127     132      -5   TRUE
-Patient_12    Patient_12    122     146     -24   TRUE
+Patient_1      Patient_1    120     127      -7  FALSE
+Patient_2      Patient_2    151     145       6  FALSE
+Patient_3      Patient_3    125     135     -10  FALSE
+Patient_4      Patient_4    126     122       4  FALSE
+Patient_5      Patient_5    115     115       0   TRUE
+Patient_6      Patient_6    132     122      10  FALSE
+Patient_7      Patient_7    132     123       9  FALSE
+Patient_8      Patient_8    129     126       3  FALSE
+Patient_9      Patient_9    134     126       8  FALSE
+Patient_10    Patient_10    139     129      10  FALSE
+Patient_11    Patient_11    127     132      -5  FALSE
+Patient_12    Patient_12    122     146     -24  FALSE
 Patient_13    Patient_13    127     120       7  FALSE
-Patient_14    Patient_14    135     114      21  FALSE
-Patient_15    Patient_15    133     121      12   TRUE
+Patient_14    Patient_14    135     114      21   TRUE
+Patient_15    Patient_15    133     121      12  FALSE
 Patient_16    Patient_16    128     120       8  FALSE
-Patient_17    Patient_17    147     128      19   TRUE
+Patient_17    Patient_17    147     128      19  FALSE
 Patient_18    Patient_18    138     120      18  FALSE
-Patient_19    Patient_19    140     133       7   TRUE
-Patient_20    Patient_20    132     115      17  FALSE</code></pre>
+Patient_19    Patient_19    140     133       7  FALSE
+Patient_20    Patient_20    132     115      17   TRUE</code></pre>
 </div>
 </div>
 <ol start="4" type="1">

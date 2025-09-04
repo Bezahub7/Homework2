@@ -80,7 +80,7 @@ neg_df
 if it is not.
 
 ```{r}
-treatment$newcol <- treatment$post_bp > 120
+treatment$newcol <- treatment$post_bp < 120
 treatment$newcol
 ```
 4. Finally, print the data frame out nicely in your final document by modifying the code below appropriately.
@@ -104,15 +104,16 @@ placebo
 ```
 1.1 Add vectors
      - difference between pre and post placebo use
-     - new column to check if post_bp is >120 
+     - new column to check if post_bp is < 120 
      
 ```{r}
 placebo$diff_bp <- placebo$pre_bp-placebo$post_bp
-placebo$newcol <- placebo$post_bp>120
+placebo$newcol <- placebo$post_bp < 120
 
 placebo$diff_bp
 placebo$newcol
 ```
+
 
 2. Now create and store a list with two elements:
 - 1st element named treatment and contains the first data frame you created.
